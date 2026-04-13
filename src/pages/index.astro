@@ -1,0 +1,244 @@
+---
+const title = "Side Software Co";
+const description = "Affordable, production-grade software through AI-accelerated delivery. Cloud-native geospatial specialty.";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <title>{title}</title>
+    <style>
+      :root {
+        --text: #1a1a2e;
+        --text-muted: #4a4a6a;
+        --bg: #fafafa;
+        --accent: #2563eb;
+        --accent-hover: #1d4ed8;
+        --border: #e2e8f0;
+        --card-bg: #ffffff;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: system-ui, -apple-system, sans-serif;
+        color: var(--text);
+        background: var(--bg);
+        line-height: 1.6;
+      }
+
+      .container {
+        max-width: 720px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+      }
+
+      header {
+        padding: 3rem 0 2rem;
+        border-bottom: 1px solid var(--border);
+      }
+
+      header h1 {
+        font-size: 1.75rem;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+      }
+
+      header p {
+        margin-top: 0.75rem;
+        color: var(--text-muted);
+        font-size: 1.1rem;
+      }
+
+      section {
+        padding: 2.5rem 0;
+        border-bottom: 1px solid var(--border);
+      }
+
+      section:last-of-type {
+        border-bottom: none;
+      }
+
+      h2 {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        letter-spacing: -0.01em;
+      }
+
+      p {
+        margin-bottom: 1rem;
+      }
+
+      p:last-child {
+        margin-bottom: 0;
+      }
+
+      .services {
+        display: grid;
+        gap: 1.25rem;
+        margin-top: 1rem;
+      }
+
+      .service {
+        padding: 1.25rem;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        background: var(--card-bg);
+      }
+
+      .service h3 {
+        font-size: 1rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+      }
+
+      .service p {
+        color: var(--text-muted);
+        font-size: 0.95rem;
+      }
+
+      .stack-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-top: 0.75rem;
+        list-style: none;
+      }
+
+      .stack-list li {
+        padding: 0.25rem 0.75rem;
+        background: var(--card-bg);
+        border: 1px solid var(--border);
+        border-radius: 999px;
+        font-size: 0.85rem;
+        color: var(--text-muted);
+      }
+
+      a {
+        color: var(--accent);
+        text-decoration: none;
+      }
+
+      a:hover {
+        color: var(--accent-hover);
+        text-decoration: underline;
+      }
+
+      footer {
+        padding: 2rem 0;
+        color: var(--text-muted);
+        font-size: 0.85rem;
+      }
+
+      @media (max-width: 480px) {
+        header {
+          padding: 2rem 0 1.5rem;
+        }
+        header h1 {
+          font-size: 1.5rem;
+        }
+        section {
+          padding: 2rem 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Side Software Co</h1>
+        <p>
+          Affordable, production-grade software. We deliver outcomes that used to
+          take a full engineering team, powered by disciplined AI workflows and
+          DevOps automation.
+        </p>
+      </header>
+
+      <section>
+        <h2>What we build</h2>
+        <div class="services">
+          <div class="service">
+            <h3>Geospatial systems</h3>
+            <p>
+              Interactive web maps, spatial APIs, and data pipelines built on OGC
+              standards. We deliver the database, the API, the viewer, and the
+              infrastructure as a managed bundle.
+            </p>
+          </div>
+          <div class="service">
+            <h3>Custom software</h3>
+            <p>
+              Websites, internal tools, and data architecture for businesses that
+              need something off-the-shelf can't provide. Modern stack, built to
+              last.
+            </p>
+          </div>
+          <div class="service">
+            <h3>AI workflow consulting</h3>
+            <p>
+              We help engineering teams adopt AI-accelerated development with
+              reusable skills, automated verification, and structured agent
+              orchestration.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>How it works</h2>
+        <p>
+          The "affordable" part isn't about cutting corners. It's about an
+          opinionated operating model that combines AI tooling with open-source
+          foundations and DevOps discipline, so a small team ships what used to
+          require a large one.
+        </p>
+        <p>
+          Our geospatial work builds on
+          <a href="https://github.com/ogc-maps">ogc-maps</a>, an open-source
+          organization we maintain with reusable mapping libraries built around
+          OGC API standards. Customers pay for delivery and support, not R&D.
+        </p>
+      </section>
+
+      <section>
+        <h2>Stack</h2>
+        <p>Cloud-native, standards-based, and built for maintainability.</p>
+        <ul class="stack-list">
+          <li>React</li>
+          <li>Astro</li>
+          <li>PostgreSQL</li>
+          <li>PostGIS</li>
+          <li>OGC APIs</li>
+          <li>MapLibre</li>
+          <li>Terraform</li>
+          <li>AWS / GCP</li>
+          <li>STAC</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Get in touch</h2>
+        <p>
+          Interested in working together? Reach out at
+          <a href="mailto:christopher.esterlein@gmail.com"
+            >christopher.esterlein@gmail.com</a
+          >.
+        </p>
+      </section>
+
+      <footer>
+        <p>Side Software Co</p>
+      </footer>
+    </div>
+  </body>
+</html>
