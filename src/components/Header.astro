@@ -1,0 +1,27 @@
+---
+import Logo from './Logo.astro';
+import ThemeToggle from './ThemeToggle.astro';
+---
+
+<header class="site-header">
+  <div class="container header-inner">
+    <nav aria-label="Primary">
+      <Logo />
+    </nav>
+    <ThemeToggle />
+  </div>
+</header>
+
+<style>
+  .site-header {
+    padding: var(--space-lg) 0;
+    border-bottom: 1px solid var(--color-border);
+    transition: border-color var(--transition-slow);
+  }
+
+  .header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+</style>

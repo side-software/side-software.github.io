@@ -1,0 +1,80 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <p class="footer-name">Side Software Co</p>
+      <p class="footer-copyright">&copy; {year}</p>
+    </div>
+    <nav class="footer-links" aria-label="Footer">
+      <a
+        href="https://github.com/side-software"
+        target="_blank"
+        rel="noopener noreferrer">GitHub</a
+      >
+      <a
+        href="https://github.com/ogc-maps"
+        target="_blank"
+        rel="noopener noreferrer">ogc-maps</a
+      >
+      <a href="mailto:christopher.esterlein@gmail.com">Contact</a>
+    </nav>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    border-top: 1px solid var(--color-border);
+    padding: var(--space-2xl) 0;
+    color: var(--color-text-subtle);
+    font-size: 0.85rem;
+    transition: border-color var(--transition-slow);
+  }
+
+  .footer-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--space-md);
+  }
+
+  .footer-name {
+    font-weight: 600;
+    color: var(--color-text-muted);
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    letter-spacing: 0.02em;
+  }
+
+  .footer-copyright {
+    color: var(--color-text-subtle);
+    margin-top: var(--space-xs);
+  }
+
+  .footer-links {
+    display: flex;
+    gap: var(--space-lg);
+  }
+
+  .footer-links a {
+    color: var(--color-text-subtle);
+    text-decoration: none;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    transition: color var(--transition-fast);
+  }
+
+  .footer-links a:hover {
+    color: var(--color-accent);
+  }
+
+  @media (max-width: 639px) {
+    .footer-inner {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+</style>

@@ -1,0 +1,23 @@
+<a href="#main-content" class="skip-to-content">Skip to content</a>
+
+<style>
+  .skip-to-content {
+    position: absolute;
+    top: -100%;
+    left: var(--space-md);
+    padding: var(--space-sm) var(--space-md);
+    background: var(--color-accent);
+    color: white;
+    border-radius: var(--radius-md);
+    z-index: 100;
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: top var(--transition-fast);
+  }
+
+  .skip-to-content:focus {
+    top: var(--space-md);
+    color: white;
+  }
+</style>
