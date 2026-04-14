@@ -1,14 +1,24 @@
 ---
 import Logo from './Logo.astro';
-import ThemeToggle from './ThemeToggle.astro';
+import ThemePicker from './ThemePicker.astro';
 ---
 
+<div class="geo-marquee" aria-hidden="true">
+  <span
+    >&#9733; &#9733; &#9733; Welcome to Side Software!! The BEST software
+    company on the World Wide Web!! &#9733; &#9733; &#9733; Click around and
+    check out all the cool stuff!! &#9733; &#9733; &#9733;</span
+  >
+</div>
+<div class="corporate-banner" aria-hidden="true">
+  Trusted by forward-thinking organizations worldwide
+</div>
 <header class="site-header">
   <div class="container header-inner">
     <nav aria-label="Primary">
       <Logo />
     </nav>
-    <ThemeToggle />
+    <ThemePicker />
   </div>
 </header>
 
@@ -23,5 +33,12 @@ import ThemeToggle from './ThemeToggle.astro';
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: var(--space-md);
+  }
+
+  @media (max-width: 480px) {
+    .header-inner {
+      flex-wrap: wrap;
+    }
   }
 </style>

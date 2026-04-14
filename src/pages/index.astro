@@ -5,28 +5,11 @@ import Header from '../components/Header.astro';
 import Hero from '../components/Hero.astro';
 import ServiceCard from '../components/ServiceCard.astro';
 import Footer from '../components/Footer.astro';
+import { themes, themeIds } from '../data/themes';
 
 const title = 'Side Software Co';
 const description =
   'Affordable, production-grade software through AI-accelerated delivery. Cloud-native geospatial specialty.';
-
-const services = [
-  {
-    title: 'Geospatial systems',
-    description:
-      'Interactive web maps, spatial APIs, and data pipelines built on OGC standards. We deliver the database, the API, the viewer, and the infrastructure as a managed bundle.',
-  },
-  {
-    title: 'Custom software',
-    description:
-      "Websites, internal tools, and data architecture for businesses that need something off-the-shelf can't provide. Modern stack, built to last.",
-  },
-  {
-    title: 'AI workflow consulting',
-    description:
-      'We help engineering teams adopt AI-accelerated development with reusable skills, automated verification, and structured agent orchestration.',
-  },
-];
 
 const stack = [
   'React',
@@ -50,47 +33,55 @@ const stack = [
 
     <section class="section animate-on-scroll">
       <div class="container">
-        <p class="section-label">// 01</p>
-        <h2>What we build</h2>
-        <div class="services-grid">
-          {
-            services.map((s) => (
-              <ServiceCard title={s.title} description={s.description} />
-            ))
-          }
-        </div>
+        {
+          themeIds.map((id) => (
+            <div data-theme-content={id}>
+              <p class="section-label">
+                {themes[id].copy.sectionLabels.services}
+              </p>
+              <h2>{themes[id].copy.sectionHeadings.services}</h2>
+              <div class="services-grid">
+                {themes[id].copy.services.map((s) => (
+                  <ServiceCard title={s.title} description={s.description} />
+                ))}
+              </div>
+            </div>
+          ))
+        }
       </div>
     </section>
 
     <section class="section animate-on-scroll">
       <div class="container">
-        <div class="prose">
-          <p class="section-label">// 02</p>
-          <h2>How it works</h2>
-          <p>
-            The &ldquo;affordable&rdquo; part isn&rsquo;t about cutting corners.
-            It&rsquo;s about an opinionated operating model that combines AI
-            tooling with open-source foundations and DevOps discipline, so a
-            small team ships what used to require a large one.
-          </p>
-          <p>
-            Our geospatial work builds on
-            <a href="https://github.com/ogc-maps">ogc-maps</a>, an open-source
-            organization we maintain with reusable mapping libraries built
-            around OGC API standards. Customers pay for delivery and support,
-            not R&D.
-          </p>
-        </div>
+        {
+          themeIds.map((id) => (
+            <div class="prose" data-theme-content={id}>
+              <p class="section-label">
+                {themes[id].copy.sectionLabels.howItWorks}
+              </p>
+              <h2>{themes[id].copy.sectionHeadings.howItWorks}</h2>
+              {themes[id].copy.howItWorks.map((para) => (
+                <p set:html={para} />
+              ))}
+            </div>
+          ))
+        }
       </div>
     </section>
 
     <section class="section animate-on-scroll">
       <div class="container">
-        <p class="section-label">// 03</p>
-        <h2>Stack</h2>
-        <p class="stack-intro">
-          Cloud-native, standards-based, and built for maintainability.
-        </p>
+        {
+          themeIds.map((id) => (
+            <div data-theme-content={id}>
+              <p class="section-label">
+                {themes[id].copy.sectionLabels.stack}
+              </p>
+              <h2>{themes[id].copy.sectionHeadings.stack}</h2>
+              <p class="stack-intro">{themes[id].copy.stackIntro}</p>
+            </div>
+          ))
+        }
         <ul class="stack-list">
           {stack.map((tech) => <li class="stack-pill">{tech}</li>)}
         </ul>
@@ -99,16 +90,17 @@ const stack = [
 
     <section class="section animate-on-scroll">
       <div class="container">
-        <div class="prose">
-          <p class="section-label">// 04</p>
-          <h2>Get in touch</h2>
-          <p>
-            Interested in working together? Reach out at
-            <a href="mailto:christopher.esterlein@gmail.com"
-              >christopher.esterlein@gmail.com</a
-            >.
-          </p>
-        </div>
+        {
+          themeIds.map((id) => (
+            <div class="prose" data-theme-content={id}>
+              <p class="section-label">
+                {themes[id].copy.sectionLabels.contact}
+              </p>
+              <h2>{themes[id].copy.sectionHeadings.contact}</h2>
+              <p set:html={themes[id].copy.contactText} />
+            </div>
+          ))
+        }
       </div>
     </section>
   </main>
@@ -168,6 +160,7 @@ const stack = [
     font-family: var(--font-mono);
     font-size: 0.8rem;
     color: var(--color-text-muted);
+    animation: var(--pill-animation, none);
     transition:
       background-color var(--transition-fast),
       border-color var(--transition-fast),

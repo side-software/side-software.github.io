@@ -1,0 +1,88 @@
+---
+import { themes, themeIds } from '../data/themes';
+---
+
+<div class="theme-picker" role="radiogroup" aria-label="Choose theme">
+  {
+    themeIds.map((id) => (
+      <button
+        class="theme-btn"
+        data-set-theme={id}
+        role="radio"
+        aria-checked="false"
+        aria-label={`${themes[id].label} theme`}
+      >
+        {themes[id].label}
+      </button>
+    ))
+  }
+</div>
+
+<style>
+  .theme-picker {
+    display: flex;
+    gap: var(--space-xs);
+  }
+
+  .theme-btn {
+    padding: 0.3rem 0.6rem;
+    font-size: 0.7rem;
+    font-family: var(--font-mono);
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: var(--color-text-subtle);
+    background: transparent;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-full);
+    cursor: pointer;
+    transition:
+      color var(--transition-fast),
+      border-color var(--transition-fast),
+      background-color var(--transition-fast),
+      box-shadow var(--transition-fast);
+    white-space: nowrap;
+  }
+
+  .theme-btn:hover {
+    color: var(--color-text-muted);
+    border-color: var(--color-text-subtle);
+  }
+
+  /* Active state — handled by data-theme on html matching data-set-theme */
+  :global([data-theme='serious']) .theme-btn[data-set-theme='serious'],
+  :global([data-theme='eccentric']) .theme-btn[data-set-theme='eccentric'],
+  :global([data-theme='corporate']) .theme-btn[data-set-theme='corporate'],
+  :global([data-theme='geocities']) .theme-btn[data-set-theme='geocities'] {
+    color: var(--color-accent);
+    border-color: var(--color-accent);
+    background: var(--color-accent-soft);
+    box-shadow: 0 0 8px var(--color-glow);
+  }
+
+  @media (max-width: 480px) {
+    .theme-btn {
+      padding: 0.25rem 0.45rem;
+      font-size: 0.65rem;
+    }
+  }
+</style>
+
+<script>
+  const picker = document.querySelector('.theme-picker');
+  picker?.addEventListener('click', (e) => {
+    const btn = (e.target as HTMLElement).closest('[data-set-theme]') as HTMLElement | null;
+    if (!btn) return;
+    const theme = btn.dataset.setTheme!;
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+    document.querySelectorAll('[data-set-theme]').forEach((b) => {
+      b.setAttribute('aria-checked', (b as HTMLElement).dataset.setTheme === theme ? 'true' : 'false');
+    });
+  });
+
+  // Set initial aria-checked
+  const current = document.documentElement.getAttribute('data-theme');
+  document.querySelectorAll('[data-set-theme]').forEach((b) => {
+    b.setAttribute('aria-checked', (b as HTMLElement).dataset.setTheme === current ? 'true' : 'false');
+  });
+</script>

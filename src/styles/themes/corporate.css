@@ -1,0 +1,103 @@
+/* ===== Corporate Theme (Satirical Enterprise) ===== */
+
+[data-theme='corporate'] {
+  --color-text: #1e293b;
+  --color-text-muted: #64748b;
+  --color-text-subtle: #94a3b8;
+  --color-bg: #ffffff;
+  --color-bg-subtle: #f8fafc;
+  --color-bg-muted: #f1f5f9;
+  --color-accent: #2563eb;
+  --color-accent-hover: #1d4ed8;
+  --color-accent-soft: rgba(37, 99, 235, 0.06);
+  --color-accent-2: #7c3aed;
+  --color-border: #cbd5e1;
+  --color-card-bg: #ffffff;
+  --color-card-border: #e2e8f0;
+  --color-card-shadow: rgba(0, 0, 0, 0.06);
+  --color-glow: transparent;
+  --dot-opacity: 0;
+
+  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-heading: 'Inter', system-ui, -apple-system, sans-serif;
+
+  --card-radius: var(--radius-md);
+  --card-backdrop: none;
+  --card-shadow-default: 0 1px 3px rgba(0, 0, 0, 0.06),
+    0 4px 12px rgba(0, 0, 0, 0.04);
+
+  --hero-glow-1: transparent;
+  --hero-glow-2: transparent;
+  --hero-animation: none;
+}
+
+/* Corporate-specific styles (global elements only) */
+[data-theme='corporate'] .section-label {
+  font-family: var(--font-body);
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  color: var(--color-accent);
+  opacity: 1;
+}
+
+/* Replace dot grid with subtle professional grid pattern */
+[data-theme='corporate'] body::before {
+  background-image: linear-gradient(
+      rgba(37, 99, 235, 0.03) 1px,
+      transparent 1px
+    ),
+    linear-gradient(90deg, rgba(37, 99, 235, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+  opacity: 1;
+}
+
+/* Corporate trust banner — gradient blue */
+[data-theme='corporate'] .corporate-banner {
+  display: block;
+  text-align: center;
+  padding: var(--space-xs) var(--space-lg);
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: #ffffff;
+  font-weight: 600;
+  background: linear-gradient(90deg, #1e40af, #2563eb, #3b82f6, #2563eb, #1e40af);
+  border-bottom: none;
+}
+
+.corporate-banner {
+  display: none;
+}
+
+/* Corporate trust badges */
+.corporate-badges {
+  display: none;
+}
+
+[data-theme='corporate'] .corporate-badges {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-xl);
+  padding: var(--space-lg) 0;
+  border-top: 1px solid #e2e8f0;
+  flex-wrap: wrap;
+}
+
+[data-theme='corporate'] .corporate-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-xs);
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #94a3b8;
+  font-weight: 600;
+}
+
+[data-theme='corporate'] .corporate-badge-icon {
+  font-size: 1.4rem;
+  opacity: 0.5;
+}

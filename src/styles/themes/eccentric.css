@@ -1,0 +1,432 @@
+/* ===== Eccentric Theme (Neon Hype) ===== */
+
+[data-theme='eccentric'] {
+  --color-text: #fef9c3;
+  --color-text-muted: #fde68a;
+  --color-text-subtle: #a3a3a3;
+  --color-bg: #0c0015;
+  --color-bg-subtle: #140020;
+  --color-bg-muted: #1a0030;
+  --color-accent: #ff2d95;
+  --color-accent-hover: #ff69b4;
+  --color-accent-soft: rgba(255, 45, 149, 0.15);
+  --color-accent-2: #00ff87;
+  --color-border: rgba(255, 45, 149, 0.3);
+  --color-card-bg: rgba(255, 45, 149, 0.08);
+  --color-card-border: rgba(255, 45, 149, 0.25);
+  --color-card-shadow: rgba(255, 45, 149, 0.4);
+  --color-glow: rgba(255, 45, 149, 0.5);
+  --dot-opacity: 0.08;
+
+  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-heading: 'Inter', system-ui, -apple-system, sans-serif;
+
+  --card-radius: var(--radius-lg);
+  --card-backdrop: blur(12px);
+  --card-animation: eccentric-rainbow-border 4s linear infinite;
+  --card-shadow-default: 0 0 12px rgba(255, 45, 149, 0.2);
+  --pill-animation: eccentric-pulse 2s ease-in-out infinite;
+
+  --hero-glow-1: rgba(255, 45, 149, 0.2);
+  --hero-glow-2: rgba(0, 255, 135, 0.15);
+  --hero-animation: orbit 10s linear infinite;
+}
+
+/* ===== Animated background ===== */
+
+[data-theme='eccentric'] body {
+  background: linear-gradient(
+    -45deg,
+    #0c0015,
+    #1a0030,
+    #0d002a,
+    #200035,
+    #0c0015
+  );
+  background-size: 400% 400%;
+  animation: eccentric-bg-shift 20s ease infinite;
+}
+
+/* ===== Glitch headings ===== */
+
+[data-theme='eccentric'] h1 {
+  text-shadow:
+    0 0 20px rgba(255, 45, 149, 0.5),
+    0 0 60px rgba(255, 45, 149, 0.2);
+  animation: eccentric-heading-glitch 4s linear infinite;
+}
+
+[data-theme='eccentric'] h2 {
+  text-shadow: 0 0 15px rgba(255, 45, 149, 0.3);
+  animation: eccentric-heading-glitch 5s linear infinite;
+  animation-delay: -1.5s;
+}
+
+/* ===== Section labels — color cycling ===== */
+
+[data-theme='eccentric'] .section-label {
+  color: var(--color-accent-2);
+  text-shadow: 0 0 10px rgba(0, 255, 135, 0.4);
+  font-weight: 700;
+  text-transform: uppercase;
+  animation: eccentric-text-shift 6s linear infinite;
+}
+
+/* ===== Keyframes ===== */
+
+/* Intermittent glitch — mostly calm, brief flicker */
+@keyframes eccentric-heading-glitch {
+  0%,
+  90%,
+  96%,
+  100% {
+    text-shadow:
+      0 0 20px rgba(255, 45, 149, 0.5),
+      0 0 60px rgba(255, 45, 149, 0.2);
+  }
+  91% {
+    text-shadow:
+      4px 0 #00ff87,
+      -4px 0 #00f0ff,
+      0 0 20px rgba(255, 45, 149, 0.8);
+  }
+  92% {
+    text-shadow:
+      -3px 0 #00ff87,
+      3px 0 #00f0ff,
+      0 0 30px rgba(255, 45, 149, 0.6);
+  }
+  93% {
+    text-shadow:
+      2px 2px #bf00ff,
+      -2px -1px #ff2d95,
+      0 0 20px rgba(0, 255, 135, 0.5);
+  }
+  94% {
+    text-shadow:
+      -4px 1px #ffff00,
+      4px -1px #00f0ff,
+      0 0 40px rgba(255, 45, 149, 0.9);
+  }
+  95% {
+    text-shadow:
+      1px -2px #ff2d95,
+      -1px 2px #00ff87,
+      0 0 20px rgba(255, 45, 149, 0.4);
+  }
+}
+
+/* Rainbow border cycle for cards */
+@keyframes eccentric-rainbow-border {
+  0%,
+  100% {
+    border-color: rgba(255, 45, 149, 0.5);
+    box-shadow: 0 0 15px rgba(255, 45, 149, 0.3);
+  }
+  25% {
+    border-color: rgba(0, 255, 135, 0.5);
+    box-shadow: 0 0 15px rgba(0, 255, 135, 0.3);
+  }
+  50% {
+    border-color: rgba(0, 240, 255, 0.5);
+    box-shadow: 0 0 15px rgba(0, 240, 255, 0.3);
+  }
+  75% {
+    border-color: rgba(191, 0, 255, 0.5);
+    box-shadow: 0 0 15px rgba(191, 0, 255, 0.3);
+  }
+}
+
+/* Section label color cycling */
+@keyframes eccentric-text-shift {
+  0%,
+  100% {
+    color: #00ff87;
+    text-shadow: 0 0 10px rgba(0, 255, 135, 0.4);
+  }
+  25% {
+    color: #ff2d95;
+    text-shadow: 0 0 10px rgba(255, 45, 149, 0.4);
+  }
+  50% {
+    color: #00f0ff;
+    text-shadow: 0 0 10px rgba(0, 240, 255, 0.4);
+  }
+  75% {
+    color: #ffff00;
+    text-shadow: 0 0 10px rgba(255, 255, 0, 0.4);
+  }
+}
+
+/* Animated background gradient */
+@keyframes eccentric-bg-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Breathing glow for pills */
+@keyframes eccentric-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 6px rgba(255, 45, 149, 0.15);
+    border-color: rgba(255, 45, 149, 0.3);
+  }
+  50% {
+    box-shadow:
+      0 0 16px rgba(255, 45, 149, 0.35),
+      0 0 32px rgba(255, 45, 149, 0.1);
+    border-color: rgba(255, 45, 149, 0.6);
+  }
+}
+
+/* Creature walk animations */
+@keyframes eccentric-walk-ltr {
+  from {
+    left: -50px;
+  }
+  to {
+    left: 100%;
+  }
+}
+
+@keyframes eccentric-walk-rtl {
+  from {
+    right: -50px;
+  }
+  to {
+    right: 100%;
+  }
+}
+
+@keyframes eccentric-creature-bob {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+/* ===== Scanline overlay ===== */
+
+.eccentric-scanlines {
+  display: none;
+}
+
+[data-theme='eccentric'] .eccentric-scanlines {
+  display: block;
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.06) 2px,
+    rgba(0, 0, 0, 0.06) 4px
+  );
+}
+
+/* ===== Pixel creatures ===== */
+
+.eccentric-creature {
+  display: none;
+}
+
+[data-theme='eccentric'] .eccentric-creature {
+  display: block;
+  position: fixed;
+  z-index: 9998;
+  pointer-events: none;
+  image-rendering: pixelated;
+}
+
+/* Creature 1: Space invader — walks left to right along the bottom */
+[data-theme='eccentric'] .eccentric-creature-1 {
+  display: block;
+  position: fixed;
+  bottom: 24px;
+  width: 4px;
+  height: 4px;
+  background: transparent;
+  z-index: 9998;
+  pointer-events: none;
+  animation:
+    eccentric-walk-ltr 20s linear infinite,
+    eccentric-creature-bob 0.5s ease-in-out infinite;
+  /* 8x7 space invader */
+  box-shadow:
+    /* row 1 — antennae */
+    4px -24px 0 0 #00ff87,
+    24px -24px 0 0 #00ff87,
+    /* row 2 — antenna stalks */
+    8px -20px 0 0 #00ff87,
+    20px -20px 0 0 #00ff87,
+    /* row 3 — head top */
+    4px -16px 0 0 #ff2d95,
+    8px -16px 0 0 #ff2d95,
+    12px -16px 0 0 #ff2d95,
+    16px -16px 0 0 #ff2d95,
+    20px -16px 0 0 #ff2d95,
+    24px -16px 0 0 #ff2d95,
+    /* row 4 — head with eyes */
+    0px -12px 0 0 #ff2d95,
+    4px -12px 0 0 #ff2d95,
+    8px -12px 0 0 #fef9c3,
+    12px -12px 0 0 #ff2d95,
+    16px -12px 0 0 #ff2d95,
+    20px -12px 0 0 #fef9c3,
+    24px -12px 0 0 #ff2d95,
+    28px -12px 0 0 #ff2d95,
+    /* row 5 — body */
+    0px -8px 0 0 #ff2d95,
+    4px -8px 0 0 #ff2d95,
+    8px -8px 0 0 #ff2d95,
+    12px -8px 0 0 #ff2d95,
+    16px -8px 0 0 #ff2d95,
+    20px -8px 0 0 #ff2d95,
+    24px -8px 0 0 #ff2d95,
+    28px -8px 0 0 #ff2d95,
+    /* row 6 — legs spread */
+    4px -4px 0 0 #bf00ff,
+    8px -4px 0 0 #bf00ff,
+    20px -4px 0 0 #bf00ff,
+    24px -4px 0 0 #bf00ff,
+    /* row 7 — feet */
+    0px 0px 0 0 #00f0ff,
+    4px 0px 0 0 #00f0ff,
+    24px 0px 0 0 #00f0ff,
+    28px 0px 0 0 #00f0ff;
+}
+
+/* Creature 2: Robot — walks right to left, higher up */
+[data-theme='eccentric'] .eccentric-creature-2 {
+  display: block;
+  position: fixed;
+  bottom: 70px;
+  width: 4px;
+  height: 4px;
+  background: transparent;
+  z-index: 9998;
+  pointer-events: none;
+  animation:
+    eccentric-walk-rtl 28s linear infinite -8s,
+    eccentric-creature-bob 0.35s ease-in-out infinite;
+  /* 6x7 robot */
+  box-shadow:
+    /* row 1 — antenna */
+    8px -24px 0 0 #ffff00,
+    12px -24px 0 0 #ffff00,
+    /* row 2 — head top */
+    4px -20px 0 0 #00f0ff,
+    8px -20px 0 0 #00f0ff,
+    12px -20px 0 0 #00f0ff,
+    16px -20px 0 0 #00f0ff,
+    /* row 3 — head with eyes */
+    4px -16px 0 0 #00f0ff,
+    8px -16px 0 0 #ff2d95,
+    12px -16px 0 0 #00f0ff,
+    16px -16px 0 0 #ff2d95,
+    /* row 4 — mouth */
+    4px -12px 0 0 #00f0ff,
+    8px -12px 0 0 #0c0015,
+    12px -12px 0 0 #0c0015,
+    16px -12px 0 0 #00f0ff,
+    /* row 5 — body */
+    0px -8px 0 0 #a3a3a3,
+    4px -8px 0 0 #bf00ff,
+    8px -8px 0 0 #bf00ff,
+    12px -8px 0 0 #bf00ff,
+    16px -8px 0 0 #bf00ff,
+    20px -8px 0 0 #a3a3a3,
+    /* row 6 — body lower */
+    4px -4px 0 0 #bf00ff,
+    8px -4px 0 0 #ffff00,
+    12px -4px 0 0 #ffff00,
+    16px -4px 0 0 #bf00ff,
+    /* row 7 — feet */
+    4px 0px 0 0 #00ff87,
+    8px 0px 0 0 #00ff87,
+    12px 0px 0 0 #00ff87,
+    16px 0px 0 0 #00ff87;
+}
+
+/* Creature 3: Tiny blob — walks left to right, highest */
+[data-theme='eccentric'] .eccentric-creature-3 {
+  display: block;
+  position: fixed;
+  bottom: 120px;
+  width: 3px;
+  height: 3px;
+  background: transparent;
+  z-index: 9998;
+  pointer-events: none;
+  animation:
+    eccentric-walk-ltr 35s linear infinite -15s,
+    eccentric-creature-bob 0.3s ease-in-out infinite;
+  /* 5x4 blob */
+  box-shadow:
+    /* row 1 — top */
+    3px -9px 0 0 #ffff00,
+    6px -9px 0 0 #ffff00,
+    9px -9px 0 0 #ffff00,
+    /* row 2 — face */
+    0px -6px 0 0 #ffff00,
+    3px -6px 0 0 #0c0015,
+    6px -6px 0 0 #ffff00,
+    9px -6px 0 0 #0c0015,
+    12px -6px 0 0 #ffff00,
+    /* row 3 — body */
+    0px -3px 0 0 #ff6600,
+    3px -3px 0 0 #ff6600,
+    6px -3px 0 0 #ff6600,
+    9px -3px 0 0 #ff6600,
+    12px -3px 0 0 #ff6600,
+    /* row 4 — feet */
+    0px 0px 0 0 #ff6600,
+    12px 0px 0 0 #ff6600;
+}
+
+/* Hide creatures on mobile */
+@media (max-width: 639px) {
+  [data-theme='eccentric'] .eccentric-creature-1,
+  [data-theme='eccentric'] .eccentric-creature-2,
+  [data-theme='eccentric'] .eccentric-creature-3 {
+    display: none;
+  }
+}
+
+/* Default hidden state for creatures */
+.eccentric-creature-1,
+.eccentric-creature-2,
+.eccentric-creature-3 {
+  display: none;
+}
+
+/* ===== Eccentric warning badge ===== */
+
+.eccentric-warning {
+  display: none;
+}
+
+[data-theme='eccentric'] .eccentric-warning {
+  display: inline-block;
+  margin-top: var(--space-lg);
+  padding: var(--space-xs) var(--space-md);
+  background: rgba(255, 45, 149, 0.15);
+  border: 1px solid rgba(255, 45, 149, 0.4);
+  border-radius: var(--radius-full);
+  color: #ffff00;
+  font-weight: 700;
+  font-size: 0.85rem;
+  animation: eccentric-pulse 1.5s ease-in-out infinite;
+}

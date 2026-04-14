@@ -9,7 +9,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const ogImage = new URL('/og-image.png', Astro.site);
 ---
 
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="serious">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -78,17 +78,21 @@ const ogImage = new URL('/og-image.png', Astro.site);
     <!-- Theme init — must run before paint to prevent flash -->
     <script is:inline>
       (function () {
-        var t = localStorage.getItem('theme');
-        var p = window.matchMedia('(prefers-color-scheme: light)').matches;
-        document.documentElement.setAttribute(
-          'data-theme',
-          t || (p ? 'light' : 'dark')
-        );
+        var p = new URLSearchParams(location.search);
+        var t = p.get('theme') || localStorage.getItem('theme');
+        var v = ['serious', 'eccentric', 'corporate', 'geocities'];
+        if (v.indexOf(t) === -1) t = 'serious';
+        document.documentElement.setAttribute('data-theme', t);
+        localStorage.setItem('theme', t);
       })();
     </script>
   </head>
   <body>
     <slot />
+    <div class="eccentric-scanlines" aria-hidden="true"></div>
+    <div class="eccentric-creature-1" aria-hidden="true"></div>
+    <div class="eccentric-creature-2" aria-hidden="true"></div>
+    <div class="eccentric-creature-3" aria-hidden="true"></div>
   </body>
 </html>
 

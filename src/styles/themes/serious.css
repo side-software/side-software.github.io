@@ -1,0 +1,30 @@
+/* ===== Serious Theme (Retro-Futuristic Dark) ===== */
+
+[data-theme='serious'] {
+  --color-text: #e2e8f0;
+  --color-text-muted: #94a3b8;
+  --color-text-subtle: #64748b;
+  --color-bg: #0a0a12;
+  --color-bg-subtle: #10101c;
+  --color-bg-muted: #16162a;
+  --color-accent: #22d3ee;
+  --color-accent-hover: #67e8f9;
+  --color-accent-soft: rgba(34, 211, 238, 0.1);
+  --color-accent-2: #a78bfa;
+  --color-border: rgba(255, 255, 255, 0.08);
+  --color-card-bg: rgba(255, 255, 255, 0.03);
+  --color-card-border: rgba(255, 255, 255, 0.06);
+  --color-card-shadow: rgba(0, 0, 0, 0.3);
+  --color-glow: rgba(34, 211, 238, 0.15);
+  --dot-opacity: 0.04;
+
+  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-heading: 'Inter', system-ui, -apple-system, sans-serif;
+
+  --card-radius: var(--radius-lg);
+  --card-backdrop: blur(12px);
+
+  --hero-glow-1: rgba(34, 211, 238, 0.07);
+  --hero-glow-2: rgba(167, 139, 250, 0.06);
+  --hero-animation: orbit 25s linear infinite;
+}

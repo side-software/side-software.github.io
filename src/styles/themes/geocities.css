@@ -1,0 +1,176 @@
+/* ===== Geocities Theme (90s Web) ===== */
+
+[data-theme='geocities'] {
+  --color-text: #000000;
+  --color-text-muted: #333333;
+  --color-text-subtle: #666666;
+  --color-bg: #ffffff;
+  --color-bg-subtle: #ffffcc;
+  --color-bg-muted: #f0f0f0;
+  --color-accent: #0000ff;
+  --color-accent-hover: #ff00ff;
+  --color-accent-soft: rgba(0, 0, 255, 0.05);
+  --color-accent-2: #ff0000;
+  --color-border: #808080;
+  --color-card-bg: #ffffee;
+  --color-card-border: #808080;
+  --color-card-shadow: transparent;
+  --color-glow: transparent;
+  --dot-opacity: 0;
+
+  --font-body: 'Comic Sans MS', 'Comic Sans', cursive;
+  --font-heading: 'Comic Sans MS', 'Comic Sans', cursive;
+
+  --card-radius: 0;
+  --card-backdrop: none;
+
+  --hero-glow-1: transparent;
+  --hero-glow-2: transparent;
+  --hero-animation: none;
+}
+
+/* Geocities-specific styles (global elements only) */
+[data-theme='geocities'] .section-label {
+  font-family: var(--font-body);
+  color: #ff0000;
+  font-weight: 700;
+  font-size: 0.9rem;
+  opacity: 1;
+}
+
+/* Rainbow divider */
+[data-theme='geocities'] .section {
+  border-bottom: none;
+  padding-bottom: var(--space-xl);
+}
+
+[data-theme='geocities'] .section::after {
+  content: '';
+  display: block;
+  height: 4px;
+  margin-top: var(--space-xl);
+  background: linear-gradient(
+    90deg,
+    #ff0000,
+    #ff7f00,
+    #ffff00,
+    #00ff00,
+    #0000ff,
+    #4b0082,
+    #9400d3
+  );
+}
+
+/* Blink animation for geocities elements */
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+[data-theme='geocities'] .geo-blink {
+  animation: blink 1s step-end infinite;
+}
+
+.geo-blink {
+  display: none;
+}
+[data-theme='geocities'] .geo-blink {
+  display: inline;
+}
+
+/* Marquee-style scrolling */
+@keyframes marquee {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.geo-marquee {
+  display: none;
+}
+
+[data-theme='geocities'] .geo-marquee {
+  display: block;
+  overflow: hidden;
+  background: #000080;
+  color: #ffff00;
+  font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+  font-weight: 700;
+  padding: var(--space-xs) 0;
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+
+[data-theme='geocities'] .geo-marquee span {
+  display: inline-block;
+  animation: marquee 15s linear infinite;
+}
+
+/* Under construction banner */
+.geo-construction {
+  display: none;
+}
+
+[data-theme='geocities'] .geo-construction {
+  display: block;
+  text-align: center;
+  padding: var(--space-sm);
+  background: #ffff00;
+  color: #000000;
+  font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+  font-weight: 700;
+  font-size: 0.85rem;
+  border: 2px dashed #ff0000;
+}
+
+/* Visitor counter */
+.geo-counter {
+  display: none;
+}
+
+[data-theme='geocities'] .geo-counter {
+  display: block;
+  text-align: center;
+  font-family: 'Courier New', monospace;
+  font-size: 0.8rem;
+  padding: var(--space-sm);
+  background: #000000;
+  color: #00ff00;
+  border: 1px inset #808080;
+  margin-top: var(--space-md);
+  max-width: 280px;
+}
+
+/* Guest book link */
+.geo-guestbook {
+  display: none;
+}
+
+[data-theme='geocities'] .geo-guestbook {
+  display: inline-block;
+  margin-top: var(--space-sm);
+  padding: var(--space-xs) var(--space-sm);
+  background: #c0c0c0;
+  border: 2px outset #ffffff;
+  color: #000000;
+  font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+[data-theme='geocities'] .geo-guestbook:hover {
+  background: #a0a0a0;
+  border-style: inset;
+  text-decoration: none;
+  color: #000000;
+}

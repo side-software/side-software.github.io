@@ -1,0 +1,24 @@
+/* ===== Theme Content Visibility ===== */
+
+[data-theme-content] {
+  display: none;
+}
+
+[data-theme='serious'] [data-theme-content='serious'],
+[data-theme='eccentric'] [data-theme-content='eccentric'],
+[data-theme='corporate'] [data-theme-content='corporate'],
+[data-theme='geocities'] [data-theme-content='geocities'] {
+  display: block;
+}
+
+/* For inline elements that need inline display */
+[data-theme='serious'] [data-theme-content-inline='serious'],
+[data-theme='eccentric'] [data-theme-content-inline='eccentric'],
+[data-theme='corporate'] [data-theme-content-inline='corporate'],
+[data-theme='geocities'] [data-theme-content-inline='geocities'] {
+  display: inline;
+}
+
+[data-theme-content-inline] {
+  display: none;
+}

@@ -1,15 +1,27 @@
+---
+import { themes, themeIds } from '../data/themes';
+---
+
 <section class="hero">
   <div class="hero-glow" aria-hidden="true"></div>
   <div class="container hero-content">
-    <p class="section-label">// software studio</p>
-    <h1>
-      Side Software<span class="accent-dot">.</span>
-    </h1>
-    <p class="tagline">
-      Affordable, production-grade software. We deliver outcomes that used to
-      take a full engineering team, powered by disciplined AI workflows and
-      DevOps automation.
-    </p>
+    {
+      themeIds.map((id) => (
+        <div data-theme-content={id}>
+          <p class="section-label">{themes[id].copy.heroLabel}</p>
+          <h1>
+            Side Software<span class="accent-dot">.</span>
+          </h1>
+          <p class="tagline">{themes[id].copy.heroTagline}</p>
+          {id === 'eccentric' && (
+            <span class="eccentric-warning">&#9889; CAUTION: EXTREME VIBES AHEAD &#9889;</span>
+          )}
+          {id === 'geocities' && (
+            <span class="geo-guestbook">&#128221; Sign My Guestbook!!</span>
+          )}
+        </div>
+      ))
+    }
   </div>
 </section>
 
@@ -26,29 +38,16 @@
     inset: -50%;
     background: radial-gradient(
         circle at 30% 40%,
-        rgba(34, 211, 238, 0.07) 0%,
+        var(--hero-glow-1) 0%,
         transparent 50%
       ),
       radial-gradient(
         circle at 70% 60%,
-        rgba(167, 139, 250, 0.06) 0%,
+        var(--hero-glow-2) 0%,
         transparent 50%
       );
-    animation: orbit 25s linear infinite;
+    animation: var(--hero-animation);
     pointer-events: none;
-  }
-
-  :global([data-theme='light']) .hero-glow {
-    background: radial-gradient(
-        circle at 30% 40%,
-        rgba(8, 145, 178, 0.06) 0%,
-        transparent 50%
-      ),
-      radial-gradient(
-        circle at 70% 60%,
-        rgba(124, 58, 237, 0.05) 0%,
-        transparent 50%
-      );
   }
 
   .hero-content {
